@@ -1,6 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#clickable-area {
+    display: flex;
+    flex: 1;
+}
+
 form {
     display: none;
     flex-direction: column;
     background: turquoise;
     padding: 1em;
+}
+
+.show {
+    display: flex;
 }

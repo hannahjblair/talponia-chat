@@ -1,4 +1,5 @@
 //TO DO:
+//make an x to get rid of the form
 //form validation
 //store form input in an array
 //display form input on page
@@ -15,7 +16,7 @@ function hideForm(event) {
     event.stopPropagation();
     document.getElementById("form").style.display = "none";
     document.getElementById("form").reset();
-    //shows the other content (right now just one <p>)
+    //shows the other content (right now just one <p>gets )
     document.getElementsByClassName("show")[0].style.display = "flex";
 }
 
@@ -30,6 +31,10 @@ document.getElementById("clickable-area").addEventListener("click", showForm);
 
 //calls hideForm function when the submit button is clicked
 document.getElementById("btn").addEventListener("click", hideForm);
+
+//calls hideForm function when the x button is clicked
+document.getElementById("btn-close").addEventListener("click", hideForm);
+
 
 
 

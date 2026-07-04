@@ -1,3 +1,6 @@
+/* TO DO */
+/* make form background transparent */
+
 body {
     display: flex;
     flex-direction: column;
@@ -12,7 +15,7 @@ body {
 form {
     display: none;
     flex-direction: column;
-    background: turquoise;
+    /* background: turquoise; */
     padding: 1em;
 }
 

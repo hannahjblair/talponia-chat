@@ -1,5 +1,4 @@
 //TO DO:
-//make an x to get rid of the form
 //form validation
 //store form input in an array
 //display form input on page

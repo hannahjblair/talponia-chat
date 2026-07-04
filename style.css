@@ -1,24 +1,65 @@
-/* TO DO */
-/* make form background transparent */
-
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    align-items: center;
 }
 
 #clickable-area {
     display: flex;
     flex: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 form {
     display: none;
     flex-direction: column;
-    /* background: turquoise; */
     padding: 1em;
+    background: #ADADFF;
+    border-radius: 5px;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    padding: .2em;
+    font-size: 1.5em;
+}
+
+input[type="text"], input[type="date"] {
+    height: 2.5em;
+}
+
+#message {
+    height: 10em;
 }
 
 .show {
     display: flex;
+}
+
+#btn-close-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btn-close {
+    font-size: 2em;
+    background: none;
+    border: none;
+}
+
+#btn {
+    font-size: 1.5em;
+    width: 4em;
+    margin-top: 1em;
+}
+
+#submit-container {
+    display: flex;
+    justify-content: center;
 }

@@ -9,21 +9,35 @@
 <body>
     <h1>Talponia Chat</h1>
     <div id="clickable-area">
-    <p class="show">click to add a message</p>
-    <form id="form">
-        <button id="btn-close" type="button">x</button>
-        <label for="name">name</label>
-        <input type="text" id="name" name="name"> 
-        <label for="lat">lattitude</label>
-        <input type="text" id="lat" name="lat"> 
-        <label for="long">longitude</label>
-        <input type="text" id="long" name="long">
-        <label for="age">when was the egg you were born in layed?</label>
-        <input type="date" id="age" name="age">
-        <label for="message">message</label>
-        <input type="text" id="message" name="message">
-        <button id="btn" type="button">submit</button>
-    </form>
+        <p class="show">click to add a message</p>
+        <form id="form">
+            <div id="btn-close-container">
+                <button id="btn-close" type="button">x</button>
+            </div>
+            <div class="form-item">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"> 
+            </div>
+            <div class="form-item">
+            <label for="lat">Lattitude</label>
+            <input type="text" id="lat" name="lat">
+            </div> 
+            <div class="form-item">
+            <label for="long">Longitude</label>
+            <input type="text" id="long" name="long">
+            </div>
+            <div class="form-item">
+            <label for="age">When was the egg you were born in layed?</label>
+            <input type="date" id="age" name="age">
+            </div>
+            <div class="form-item">
+            <label for="Message">message</label>
+            <input type="text" id="message" name="message">
+            </div>
+            <div id="submit-container">
+            <button id="btn" type="button">submit</button>
+            </div>
+        </form>
     </div>
     <script src="script.js"></script> 
 </body>

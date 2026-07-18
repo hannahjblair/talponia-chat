@@ -7,10 +7,11 @@ body {
 
 #clickable-area {
     display: flex;
+    flex-direction: column;
     flex: 1;
     width: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 form {
@@ -65,3 +66,5 @@ input[type="text"], input[type="date"] {
     display: flex;
     justify-content: center;
 }
+
+

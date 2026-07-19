@@ -67,4 +67,23 @@ input[type="text"], input[type="date"] {
     justify-content: center;
 }
 
+.validation-message {
+    color: red;
+    margin:0em;
+    font-size: 20px;
+}
+
+#name-alert {
+    display: none;
+}
+
+#age-alert {
+    display: none;
+}
+
+#message-alert {
+    display: none;
+}
+
+
 

@@ -1,3 +1,5 @@
+
+
 //changes the display of the form element to flex 
 function showForm() {
     document.getElementById("form").style.display = "flex";
@@ -20,9 +22,6 @@ document.getElementById("form").addEventListener("click", function(event) {
 });
 
 
-//calls showForm function when user clicks in clickable-area container
-document.getElementById("clickable-area").addEventListener("click", showForm);
-
 
 // function that adds the user input from the form to an object then pushes 
 // that opject to an array of form answers
@@ -42,26 +41,88 @@ function setContent() {
 }
 
 
-//calls setContent function when the submit button is clicked
-document.getElementById("btn").addEventListener("click", setContent);
+//Form validation:
+//don't let user enter a blank for name or the message
+//make sure the user does select a dob (ok if it is in the future though, but 
+//must slect day month and year.)
+//if user doesn't have input needed keep all the things that normaly happen at the 
+//submit button click from happening
 
-//calls hideForm function when the submit button is clicked
-document.getElementById("btn").addEventListener("click", hideForm);
+
+function validateName() {
+    let nameValue = document.getElementById("name").value;
+    if (nameValue == "") {
+        document.getElementById("name-alert").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("name-alert").style.display = "none";
+        return true;
+    }
+}
+
+function validateDOB () {
+    let DOB = document.getElementById("age").value;
+    if (!DOB) {
+        document.getElementById("age-alert").style.display = "block";
+        return false; 
+    } else {
+        document.getElementById("age-alert").style.display = "none";
+        return true;
+    }
+}
+
+function validateMessage() {
+    let messageValue = document.getElementById("message").value;
+    if (messageValue == "") {
+        document.getElementById("message-alert").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("message-alert").style.display = "none";
+        return true;
+    }
+}
+
+
+
+
+//calls showForm function when user clicks in clickable-area container
+document.getElementById("clickable-area").addEventListener("click", showForm);
 
 //calls hideForm function when the x button is clicked
 document.getElementById("btn-close").addEventListener("click", hideForm);
 
+//calls on the form validation functions when the submit button is clicked
+document.getElementById("btn").addEventListener("click", function(event) {
+    //have to run the validation functions first because otherwise the alert message
+    //will only show for the first input that is left blank
+    let isNameValid = validateName();
+    let isDOBValid = validateDOB();
+    let ismessageValid = validateMessage();
+    //if all inputs have input then calls setContent and hideForm
+    if (isNameValid === true && isDOBValid === true && ismessageValid === true) {
+        setContent(); 
+        hideForm(event); 
+    }
+});
+
+
 
 
 //TO DO:
-//1. form validation
-//2. figure out how to add the location of the click that brings up
+
+//reset the form completely when x is clicked and make sure 
+//none of the alert messages are showing
+
+// figure out how to add the location of the click that brings up
 //the form to the object so I can later display that message at the
 //spot the user clicked
-//3. Display each message where the user clicked
-//4. Calculate the users life cycle stage from DOB and display
+
+//Display each message where the user clicked
+
+//Calculate the users life cycle stage from DOB and display
 //image of the life cycle stage at the top corner of the message
 //the life cycle stage will need to be calculated each time the pg loads
 //and not set as a value in the object becuase the current cycle will change
-//5. make keyboard that represents peduncle borer communication better
+
+//make keyboard that represents peduncle borer communication better
 //than human letters

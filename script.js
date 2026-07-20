@@ -14,6 +14,10 @@ function hideForm(event) {
     document.getElementById("form").reset();
     //shows the other content 
     document.getElementsByClassName("show")[0].style.display = "flex";
+    //makes sure there are no alert messages showing
+    document.getElementById("name-alert").style.display = "none";
+    document.getElementById("age-alert").style.display = "none";
+    document.getElementById("message-alert").style.display = "none";
 }
 
 //stops the event propogation when there is a click inside form so it doesnt count as a click in clickable-area

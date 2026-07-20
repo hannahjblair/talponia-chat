@@ -45,16 +45,11 @@ function setContent() {
 }
 
 
-//Form validation:
-//don't let user enter a blank for name or the message
-//make sure the user does select a dob (ok if it is in the future though, but 
-//must slect day month and year.)
-//if user doesn't have input needed keep all the things that normaly happen at the 
-//submit button click from happening
-
+//Form validation, check if the input is left blank and if so sets the alert message
+//to show using css
 
 function validateName() {
-    let nameValue = document.getElementById("name").value;
+    let nameValue = document.getElementById("name").value.trim();
     if (nameValue == "") {
         document.getElementById("name-alert").style.display = "block";
         return false;
@@ -76,7 +71,7 @@ function validateDOB () {
 }
 
 function validateMessage() {
-    let messageValue = document.getElementById("message").value;
+    let messageValue = document.getElementById("message").value.trim();
     if (messageValue == "") {
         document.getElementById("message-alert").style.display = "block";
         return false;
@@ -114,8 +109,7 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 //TO DO:
 
-//reset the form completely when x is clicked and make sure 
-//none of the alert messages are showing
+//form validation- account for all spaces
 
 // figure out how to add the location of the click that brings up
 //the form to the object so I can later display that message at the

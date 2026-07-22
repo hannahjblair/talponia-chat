@@ -27,24 +27,6 @@ document.getElementById("form").addEventListener("click", function(event) {
 
 
 
-// function that adds the user input from the form to an object then pushes 
-// that opject to an array of form answers
-
-let formArray = []
-
-function setContent() {
-    let nameValue = document.getElementById("name").value;
-    let dateOfBirth = document.getElementById("age").value;
-    let messageValue = document.getElementById("message").value;
-
-    let formObj = {name: nameValue, dob: dateOfBirth, message: messageValue}
-
-    formArray.push(formObj);
-    console.log(formArray);
-
-}
-
-
 //Form validation, check if the input is left blank and if so sets the alert message
 //to show using css
 
@@ -82,7 +64,52 @@ function validateMessage() {
 }
 
 
+//puts the click location of the click in the clickable-area in an object
+let clickLocation = {x: 0, y: 0};
 
+function findClickLocation(event) {
+    clickLocation.x = event.pageX;
+    clickLocation.y = event.pageY;
+    console.log(clickLocation);
+}
+
+// function that adds the user input from the form to an object then pushes 
+// that opject to an array of form answers
+
+let formArray = []
+
+function setContent() {
+    let nameValue = document.getElementById("name").value;
+    let dateOfBirth = document.getElementById("age").value;
+    let messageValue = document.getElementById("message").value;
+
+    let formObj = {name: nameValue, dob: dateOfBirth, message: messageValue, location: {...clickLocation}}
+
+    formArray.push(formObj);
+    console.log(formArray);
+    //return obj here so it can be passed in to the show message function when the submit button is clicked
+    //so the location object can be added to the form array
+    return formObj;
+
+}
+
+function showMessage(formObj) {
+    //makes a div to hold each message frim the array/form input
+    let messageDiv = document.createElement("div");
+    messageDiv.className = "message-div";
+
+    messageDiv.innerHTML = `${formObj.name} ${formObj.dob} ${formObj.message}`;
+    //displays the message at the location the user clicked
+    messageDiv.style.position = "absolute";
+    messageDiv.style.left = formObj.location.x + "px";
+    messageDiv.style.top = formObj.location.y + "px";
+    document.body.appendChild(messageDiv);
+}
+
+
+
+
+document.getElementById("clickable-area").addEventListener("click", findClickLocation);
 
 //calls showForm function when user clicks in clickable-area container
 document.getElementById("clickable-area").addEventListener("click", showForm);
@@ -99,8 +126,13 @@ document.getElementById("btn").addEventListener("click", function(event) {
     let ismessageValid = validateMessage();
     //if all inputs have input then calls setContent and hideForm
     if (isNameValid === true && isDOBValid === true && ismessageValid === true) {
+        //passing in the obj that is returned from set content so the location object can 
+        //be added to the formArray so the message can be displayed at the location of the 
+        //users initial click
+        let currentForm = setContent();
         setContent(); 
         hideForm(event); 
+        showMessage(currentForm);
     }
 });
 
@@ -109,13 +141,7 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 //TO DO:
 
-//form validation- account for all spaces
-
-// figure out how to add the location of the click that brings up
-//the form to the object so I can later display that message at the
-//spot the user clicked
-
-//Display each message where the user clicked
+//hide the messages when the form is pulled up
 
 //Calculate the users life cycle stage from DOB and display
 //image of the life cycle stage at the top corner of the message

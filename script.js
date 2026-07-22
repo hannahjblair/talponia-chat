@@ -3,8 +3,13 @@
 //changes the display of the form element to flex 
 function showForm() {
     document.getElementById("form").style.display = "flex";
-    //hides the other content (right now just one <p>)
-    document.getElementsByClassName("show")[0].style.display = "none";
+    //hides all of the elements with the class of show (click to add a message
+    //instructions and the messages themeselves) 
+    const elementsToShow = document.getElementsByClassName("show");
+    for (let i = 0; i < elementsToShow.length; i++) {
+        elementsToShow[i].style.display = "none";
+    }
+
 }
 
 //changes the display of the form element to none and stops event propogation
@@ -12,8 +17,13 @@ function hideForm(event) {
     event.stopPropagation();
     document.getElementById("form").style.display = "none";
     document.getElementById("form").reset();
-    //shows the other content 
-    document.getElementsByClassName("show")[0].style.display = "flex";
+    //shows all of the elements with the class of show (click to add a message
+    //instructions and the messages themeselves) 
+    const elementsToShow = document.getElementsByClassName("show");
+    for (let i = 0; i < elementsToShow.length; i++) {
+        elementsToShow[i].style.display = "flex";
+    }
+
     //makes sure there are no alert messages showing
     document.getElementById("name-alert").style.display = "none";
     document.getElementById("age-alert").style.display = "none";
@@ -96,7 +106,7 @@ function setContent() {
 function showMessage(formObj) {
     //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
-    messageDiv.className = "message-div";
+    messageDiv.classList.add("message-div", "show");
 
     messageDiv.innerHTML = `${formObj.name} ${formObj.dob} ${formObj.message}`;
     //displays the message at the location the user clicked
@@ -124,15 +134,16 @@ document.getElementById("btn").addEventListener("click", function(event) {
     let isNameValid = validateName();
     let isDOBValid = validateDOB();
     let ismessageValid = validateMessage();
-    //if all inputs have input then calls setContent and hideForm
+    //if all inputs have input then calls setContent and  and showMessage
     if (isNameValid === true && isDOBValid === true && ismessageValid === true) {
         //passing in the obj that is returned from set content so the location object can 
         //be added to the formArray so the message can be displayed at the location of the 
         //users initial click
         let currentForm = setContent();
         setContent(); 
-        hideForm(event); 
         showMessage(currentForm);
+        hideForm(event); 
+    
     }
 });
 
@@ -141,7 +152,10 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 //TO DO:
 
-//hide the messages when the form is pulled up
+//right now if you click one place initially then once the form is pulled up click 
+//somewhere outside of the form the message will go to that location because that 
+//click gets saved to the click location object. might leave it like that but leaving
+//this note so I don't forget it does that.
 
 //Calculate the users life cycle stage from DOB and display
 //image of the life cycle stage at the top corner of the message

@@ -96,17 +96,9 @@ function setContent() {
 
     formArray.push(formObj);
     console.log(formArray);
-    //return obj here so it can be passed in to the show message function when the submit button is clicked
-    //so the location object can be added to the form array
-    return formObj;
 
-}
-
-//https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
-
-
-function calculateAge(formObj) {
-    // Create Date object for the current date
+    ////////
+        // Create Date object for the current date
     let currentDate = new Date();
 
     // Create Date object for the end date
@@ -118,11 +110,14 @@ function calculateAge(formObj) {
     // Convert milliseconds to days and use Math.ceil to avoid fractional days
     let daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
     console.log(daysDifference);
-    return daysDifference;
-}
 
-function showMessage(formObj, age) {
-    //makes a div to hold each message frim the array/form input
+    let age = daysDifference;
+
+    ///////////////////////
+
+    //https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
+
+        //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
     messageDiv.classList.add("message-div", "show");
 
@@ -132,7 +127,10 @@ function showMessage(formObj, age) {
     messageDiv.style.left = formObj.location.x + "px";
     messageDiv.style.top = formObj.location.y + "px";
     document.body.appendChild(messageDiv);
+    
+
 }
+
 
 
 document.getElementById("clickable-area").addEventListener("click", findClickLocation);
@@ -152,18 +150,10 @@ document.getElementById("btn").addEventListener("click", function(event) {
     let ismessageValid = validateMessage();
     //if all inputs have input then calls setContent and  and showMessage
     if (isNameValid === true && isDOBValid === true && ismessageValid === true) {
-        //passing in the obj that is returned from set content so the location object can 
-        //be added to the formArray so the message can be displayed at the location of the 
-        //users initial click
-        let currentForm = setContent();
-        let ageResult = calculateAge(currentForm);
-        showMessage(currentForm, ageResult);
-        hideForm(event); 
-    
+        setContent();
+        hideForm(event);
     }
 });
-
-
 
 
 

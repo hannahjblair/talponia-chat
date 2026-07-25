@@ -9,7 +9,6 @@ function showForm() {
     for (let i = 0; i < elementsToShow.length; i++) {
         elementsToShow[i].style.display = "none";
     }
-
 }
 
 //changes the display of the form element to none and stops event propogation
@@ -103,20 +102,37 @@ function setContent() {
 
 }
 
-function showMessage(formObj) {
+//https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
+
+
+function calculateAge(formObj) {
+    // Create Date object for the current date
+    let currentDate = new Date();
+
+    // Create Date object for the end date
+    let dob = new Date(formObj.dob);
+
+    // Calculate time difference in milliseconds
+    let timeDifference = currentDate - dob;
+
+    // Convert milliseconds to days and use Math.ceil to avoid fractional days
+    let daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+    console.log(daysDifference);
+    return daysDifference;
+}
+
+function showMessage(formObj, age) {
     //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
     messageDiv.classList.add("message-div", "show");
 
-    messageDiv.innerHTML = `${formObj.name} ${formObj.dob} ${formObj.message}`;
+    messageDiv.innerHTML = `${formObj.name} ${age} ${formObj.message}`;
     //displays the message at the location the user clicked
     messageDiv.style.position = "absolute";
     messageDiv.style.left = formObj.location.x + "px";
     messageDiv.style.top = formObj.location.y + "px";
     document.body.appendChild(messageDiv);
 }
-
-
 
 
 document.getElementById("clickable-area").addEventListener("click", findClickLocation);
@@ -140,8 +156,8 @@ document.getElementById("btn").addEventListener("click", function(event) {
         //be added to the formArray so the message can be displayed at the location of the 
         //users initial click
         let currentForm = setContent();
-        setContent(); 
-        showMessage(currentForm);
+        let ageResult = calculateAge(currentForm);
+        showMessage(currentForm, ageResult);
         hideForm(event); 
     
     }
@@ -150,7 +166,12 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 
 
+
+
+
 //TO DO:
+
+//age is not calculating corectly- I think becuase current day is pulled from GMT? fix this
 
 //right now if you click one place initially then once the form is pulled up click 
 //somewhere outside of the form the message will go to that location because that 
@@ -164,3 +185,5 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 //make keyboard that represents peduncle borer communication better
 //than human letters
+
+//about page using github api to diplay info about the repo for the project

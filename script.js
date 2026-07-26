@@ -95,10 +95,12 @@ function setContent() {
     let formObj = {name: nameValue, dob: dateOfBirth, message: messageValue, location: {...clickLocation}}
 
     formArray.push(formObj);
-    console.log(formArray);
+    // console.log(formArray);
 
     ////////
-        // Create Date object for the current date
+    //https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
+
+    // Create Date object for the current date
     let currentDate = new Date();
 
     // Create Date object for the end date
@@ -107,27 +109,50 @@ function setContent() {
     // Calculate time difference in milliseconds
     let timeDifference = currentDate - dob;
 
-    // Convert milliseconds to days and use Math.ceil to avoid fractional days
-    let daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-    console.log(daysDifference);
+    // Convert milliseconds to days
+    let age = Math.floor(timeDifference / (1000 * 3600 * 24));
+    // console.log(age);
 
-    let age = daysDifference;
+    ///////////////////////
+    //gunna determine what life cycle stage the user is in according to their age/dob
+    //if age is negative - spec of dust
+    //if 0-14 days egg
+    //if 15-90 days larva
+    //if 91-331 days pupa
+    //if 332-362 days moth
+    //if 363 or greater decomposed
+
+    let stage = "";
+
+    if (age < 0) {
+        stage = "particles.jpg";
+    } else if (age >= 0 && age <= 14) {
+        stage = "eggs.jpg";
+    } else if (age >= 15 && age <= 90) {
+        stage = "larva.jpg";
+    } else if (age >= 91 && age <= 331) {
+        stage = "pupa.jpeg";
+    } else if (age >= 332 && age <= 362) {
+        stage = "moth.jpeg";
+    } else if (age >= 363) {
+        stage = "decomposed.jpg";
+    };
+
 
     ///////////////////////
 
-    //https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
-
-        //makes a div to hold each message frim the array/form input
+    //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
     messageDiv.classList.add("message-div", "show");
 
-    messageDiv.innerHTML = `${formObj.name} ${age} ${formObj.message}`;
+    messageDiv.innerHTML = `${formObj.name} <img src="${stage}"alt="lifecycle stage" style="width:60px;"> ${formObj.message}`;
     //displays the message at the location the user clicked
     messageDiv.style.position = "absolute";
     messageDiv.style.left = formObj.location.x + "px";
     messageDiv.style.top = formObj.location.y + "px";
     document.body.appendChild(messageDiv);
-    
+
+
 
 }
 
@@ -176,4 +201,4 @@ document.getElementById("btn").addEventListener("click", function(event) {
 //make keyboard that represents peduncle borer communication better
 //than human letters
 
-//about page using github api to diplay info about the repo for the project
+//about page using github api to diplay info about the repo for the project -maybe just desplay the read me

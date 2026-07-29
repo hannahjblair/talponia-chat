@@ -85,10 +85,28 @@ input[type="text"], input[type="date"] {
     display: none;
 }
 
-#test-test {
+.display-container {
     display: flex;
     flex-direction: column;
+    width: 25%;
+    background: #ff33cc;
+    padding: .5em;
+    border-radius: 5px;
 }
+
+.name-container {
+    display: flex;
+    justify-content: space-between;
+    margin: none;
+    padding: none;
+}
+
+img {
+    height: 30px;
+    margin-left: .25em;
+}
+
+
 
 
 

@@ -125,17 +125,17 @@ function setContent() {
     let stage = "";
 
     if (age < 0) {
-        stage = "particles.jpg";
+        stage = "testimage.png";
     } else if (age >= 0 && age <= 14) {
-        stage = "eggs.jpg";
+        stage = "testimage.png";
     } else if (age >= 15 && age <= 90) {
-        stage = "larva.jpg";
+        stage = "testimage.png";
     } else if (age >= 91 && age <= 331) {
-        stage = "pupa.jpeg";
+        stage = "testimage.png";
     } else if (age >= 332 && age <= 362) {
-        stage = "moth.jpeg";
+        stage = "testimage.png";
     } else if (age >= 363) {
-        stage = "decomposed.jpg";
+        stage = "testimage.png";
     };
 
 
@@ -143,9 +143,17 @@ function setContent() {
 
     //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
-    messageDiv.classList.add("message-div", "show");
+    messageDiv.classList.add("display-container", "show");
 
-    messageDiv.innerHTML = `${formObj.name} <img src="${stage}"alt="lifecycle stage" style="width:60px;"> ${formObj.message}`;
+    // messageDiv.innerHTML = `${formObj.name} <img src="${stage}"alt="lifecycle stage" style="width:60px;"> ${formObj.message}`;
+    messageDiv.innerHTML = `<div class="name-container">
+                                <p>${formObj.name}</p>
+                                <img src="${stage}"alt="lifecycle stage">
+                            </div>
+                            <div class="user-message">
+                                <p>${formObj.message}</p>
+                            </div>`
+
     //displays the message at the location the user clicked
     messageDiv.style.position = "absolute";
     messageDiv.style.left = formObj.location.x + "px";

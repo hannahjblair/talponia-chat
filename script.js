@@ -123,19 +123,26 @@ function setContent() {
     //if 363 or greater decomposed
 
     let stage = "";
+    let altDescription = "";
 
     if (age < 0) {
         stage = "testimage.png";
+        altDescription = "the user is currently a dust particle that has not yet become a pawpawpeduncle borer";
     } else if (age >= 0 && age <= 14) {
         stage = "testimage.png";
+        altDescription = "the user is an egg";
     } else if (age >= 15 && age <= 90) {
         stage = "testimage.png";
+        altDescription = "the user is a larva";
     } else if (age >= 91 && age <= 331) {
         stage = "testimage.png";
+        altDescription = "the user is a pupa";
     } else if (age >= 332 && age <= 362) {
         stage = "testimage.png";
+        altDescription = "the user is a moth";
     } else if (age >= 363) {
         stage = "testimage.png";
+        altDescription = "the user is decomposed";
     };
 
 
@@ -148,7 +155,7 @@ function setContent() {
     // messageDiv.innerHTML = `${formObj.name} <img src="${stage}"alt="lifecycle stage" style="width:60px;"> ${formObj.message}`;
     messageDiv.innerHTML = `<div class="name-container">
                                 <p>${formObj.name}</p>
-                                <img src="${stage}"alt="lifecycle stage">
+                                <img src="${stage}"alt="${altDescription}">
                             </div>
                             <div class="user-message">
                                 <p>${formObj.message}</p>

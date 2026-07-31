@@ -102,6 +102,9 @@ function setContent() {
 
     // Create Date object for the current date
     let currentDate = new Date();
+    
+    //makes currentDate at midnight
+    currentDate.setHours(0, 0, 0, 0);
 
     // Create Date object for the end date
     let dob = new Date(formObj.dob);
@@ -127,7 +130,7 @@ function setContent() {
 
     if (age < 0) {
         stage = "testimage.png";
-        altDescription = "the user is currently a dust particle that has not yet become a pawpawpeduncle borer";
+        altDescription = "the user is currently spec of dust that has not yet become a pawpawpeduncle borer";
     } else if (age >= 0 && age <= 14) {
         stage = "testimage.png";
         altDescription = "the user is an egg";
@@ -152,7 +155,7 @@ function setContent() {
     let messageDiv = document.createElement("div");
     messageDiv.classList.add("display-container", "show");
 
-    // messageDiv.innerHTML = `${formObj.name} <img src="${stage}"alt="lifecycle stage" style="width:60px;"> ${formObj.message}`;
+    // sets the html for the display of the message with the users input from the form
     messageDiv.innerHTML = `<div class="name-container">
                                 <p>${formObj.name}</p>
                                 <img src="${stage}"alt="${altDescription}">
@@ -201,19 +204,13 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 //TO DO:
 
-//age is not calculating corectly- I think becuase current day is pulled from GMT? fix this
-
 //right now if you click one place initially then once the form is pulled up click 
 //somewhere outside of the form the message will go to that location because that 
 //click gets saved to the click location object. might leave it like that but leaving
 //this note so I don't forget it does that.
 
-//Calculate the users life cycle stage from DOB and display
-//image of the life cycle stage at the top corner of the message
-//the life cycle stage will need to be calculated each time the pg loads
-//and not set as a value in the object becuase the current cycle will change
-
 //make keyboard that represents peduncle borer communication better
 //than human letters
 
-//about page using github api to diplay info about the repo for the project -maybe just desplay the read me
+
+

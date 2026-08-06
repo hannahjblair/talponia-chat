@@ -202,15 +202,4 @@ document.getElementById("btn").addEventListener("click", function(event) {
 
 
 
-//TO DO:
-
-//right now if you click one place initially then once the form is pulled up click 
-//somewhere outside of the form the message will go to that location because that 
-//click gets saved to the click location object. might leave it like that but leaving
-//this note so I don't forget it does that.
-
-//make keyboard that represents peduncle borer communication better
-//than human letters
-
-
 

@@ -8,25 +8,22 @@ body {
     margin: 0;
     background: linear-gradient(90deg,rgba(255, 160, 28, 1) 0%, rgba(242, 253, 29, 1) 50%, rgba(12, 235, 247, 1) 100%);
     /* https://cssgradient.io/ */
+    /* touch-action: none;
+    position: fixed; */
+    /* when I tried above gradient dissapears  */
+    /* overscroll-behavior: none; - doesn't do anything */
+    /* overscroll-behavior: contain; - doesn't do anything */
+    /* overflow-x: hidden; - nothing :( */
+
 }
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-    overflow: hidden;
-    margin: 0;
-    background: #ffa01c;
-    background: linear-gradient(90deg,rgba(255, 160, 28, 1) 0%, rgba(242, 253, 29, 1) 50%, rgba(12, 235, 247, 1) 100%);
-    /* https://cssgradient.io/ */
-}
+
 
 #clickable-area {
     display: flex;
     flex-direction: column;
     flex: 1;
     width: 100%;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -320,5 +317,6 @@ h1 a {
     color: black;
     text-decoration: none;
 }
+
 
 

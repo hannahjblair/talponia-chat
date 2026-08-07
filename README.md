@@ -1,15 +1,15 @@
 # Talponia Chat
-This is a chatroom for pawpaw peduncle borers _(Talponia plummeriana)_, a moth species that feeds and lives on pawpaw trees. Pawpaws are the largest fruit native to North America. Peduncle Borers enter their name, date the egg they hatched from was laid and their message which is displayed at the location of their click on the page. 
+This is a chatroom for pawpaw peduncle borers _(Talponia plummeriana)_, a moth species that feeds and lives on pawpaw trees. Pawpaws are the largest fruit native to North America. Peduncle Borers enter their name, date the egg they hatched from was laid, and their message which is displayed at the location of their click on the page. 
 
 ## How to run Locally
 1. Clone the talponia-chat repository to your local enviornment
 2. Open the repo in VScode
-3. Open index.html and use the Go Live feature in VScode to view project
+3. Open index.html and use the Go Live feature in VScode to view the project
 
 ## Features  
 
 __API__  
-I utilized the github API to display the README from my projects repository on the about page.
+I utilized the github API to display the README from my project's repository on the about page.
 
 __Media Query__  
 I used a media query to have the messages only take up 15% of the screen for screens 1200 px and wider, istead of the default wodth of 25% so the messages don't look stretched.

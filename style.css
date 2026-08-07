@@ -318,5 +318,8 @@ h1 a {
     text-decoration: none;
 }
 
-
-
+@media (min-width: 1200px) {
+    .display-container {
+    width: 15%;
+}
+}

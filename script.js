@@ -144,7 +144,7 @@ function setContent() {
         stage = "moth.png";
         altDescription = "the user is a moth";
     } else if (age >= 363) {
-        stage = "moth.png";
+        stage = "decomposed.png";
         altDescription = "the user is decomposed";
     };
 

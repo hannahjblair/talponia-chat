@@ -129,22 +129,22 @@ function setContent() {
     let altDescription = "";
 
     if (age < 0) {
-        stage = "testimage.png";
+        stage = "particles.png";
         altDescription = "the user is currently spec of dust that has not yet become a pawpawpeduncle borer";
     } else if (age >= 0 && age <= 14) {
-        stage = "testimage.png";
+        stage = "eggs.png";
         altDescription = "the user is an egg";
     } else if (age >= 15 && age <= 90) {
-        stage = "testimage.png";
+        stage = "larva.png";
         altDescription = "the user is a larva";
     } else if (age >= 91 && age <= 331) {
-        stage = "testimage.png";
+        stage = "pupa.png";
         altDescription = "the user is a pupa";
     } else if (age >= 332 && age <= 362) {
-        stage = "testimage.png";
+        stage = "moth.png";
         altDescription = "the user is a moth";
     } else if (age >= 363) {
-        stage = "testimage.png";
+        stage = "moth.png";
         altDescription = "the user is decomposed";
     };
 

@@ -1,4 +1,3 @@
-
 const apiEndpoint = "https://api.github.com/repos/hannahjblair/talponia-chat/readme";
 const targetContainer = document.getElementById("read-me");
 
@@ -15,7 +14,7 @@ async function displayReadMe() {
         const readMeContent = atob(data.content);
 
 
-        document.getElementById("read-me").innerHTML = readMeContent;
+        targetContainer.innerHTML = readMeContent;
 
     } catch (error) {
         targetContainer.innerHTML = `Error: ${error.message}`;
@@ -23,7 +22,3 @@ async function displayReadMe() {
 }
 
 displayReadMe();
-
-
-
- // const decodedContent = atob(data.content);

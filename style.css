@@ -17,7 +17,6 @@ body {
 
 }
 
-
 #clickable-area {
     display: flex;
     flex-direction: column;
@@ -96,154 +95,7 @@ input[type="text"], input[type="date"] {
     display: none;
 }
 
-.display-container {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    background: #ff33cc;
-    padding: .5em;
-    border-radius: 5px;
-    min-width: 250px;
-}
-
-.display-container:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 30%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #ff33cc;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
-    /* https://projects.verou.me/bubbly/ */
-}
-
-.name-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    align-items: center;
-}
-
-.name-container p, 
-.display-container p {
-    margin: 0;
-    padding: 0;
-}
-
-.name-container p {
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-img {
-    height: 30px;
-    margin-left: .25em;
-    width: auto;
-    flex-shrink: 0;
-    display: block;
-}
-
-footer a {
-    font-size: 1.5em;
-    color: black;
-    text-decoration: none;
-}
-
-footer {
-    margin: 1em;
-}
-
-h1 a {
-    color: black;
-    text-decoration: none;
-}
-#clickable-area {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
-    align-items: center;
-}
-
-form {
-    display: none;
-    flex-direction: column;
-    padding: 1em;
-    background: #ff33cc;;
-    border-radius: 5px;
-    margin-left: .5em;
-    margin-right: .5em;
-}
-
-.form-item {
-    display: flex;
-    flex-direction: column;
-    padding: .2em;
-    font-size: 1.5em;
-}
-
-input[type="text"], input[type="date"] {
-    height: 2.5em;
-    font-size: 18px;
-}
-
-#message {
-    height: 10em;
-    font-size: 18px;
-}
-
-.show {
-    display: flex;
-}
-
-#btn-close-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-#btn-close {
-    font-size: 2em;
-    background: none;
-    border: none;
-}
-
-#btn {
-    font-size: 1.5em;
-    width: 4em;
-    margin-top: 1em;
-}
-
-#submit-container {
-    display: flex;
-    justify-content: center;
-}
-
-.validation-message {
-    margin:0em;
-    font-size: 20px;
-}
-
-#name-alert {
-    display: none;
-}
-
-#age-alert {
-    display: none;
-}
-
-#message-alert {
-    display: none;
-}
-
+/* this is what is displayed as the message */
 .display-container {
     display: flex;
     flex-direction: column;
@@ -256,6 +108,7 @@ input[type="text"], input[type="date"] {
     box-shadow: 0 0 5px #ffccff; /* slightly glowy border*/ 
 }
 
+/* triangle that makes the container look like a message bubble */
 .display-container:after {
 	content: '';
 	position: absolute;
@@ -290,6 +143,7 @@ input[type="text"], input[type="date"] {
 
 .name-container p {
     font-weight: bold;
+    /* incase someone inputs a long name */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

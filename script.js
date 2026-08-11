@@ -79,7 +79,7 @@ let clickLocation = {x: 0, y: 0};
 function findClickLocation(event) {
     clickLocation.x = event.pageX;
     clickLocation.y = event.pageY;
-    console.log(clickLocation);
+    // console.log(clickLocation);
 }
 
 // function that adds the user input from the form to an object then pushes 
@@ -97,26 +97,26 @@ function setContent() {
     formArray.push(formObj);
     // console.log(formArray);
 
-    ////////
+    //determines how many days old the user is based on thr dob they enter in the form
+
     //https://www.geeksforgeeks.org/javascript/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
 
     // Create Date object for the current date
     let currentDate = new Date();
     
-    //makes currentDate at midnight
+    //makes currentDate at midnight - fixes wonky issues when determinig how many days old
     currentDate.setHours(0, 0, 0, 0);
 
-    // Create Date object for the end date
+    // Create Date object for the dob
     let dob = new Date(formObj.dob);
 
     // Calculate time difference in milliseconds
     let timeDifference = currentDate - dob;
 
-    // Convert milliseconds to days
+    // Convert milliseconds to days, age = how many days old user is
     let age = Math.floor(timeDifference / (1000 * 3600 * 24));
     // console.log(age);
 
-    ///////////////////////
     //gunna determine what life cycle stage the user is in according to their age/dob
     //if age is negative - spec of dust
     //if 0-14 days egg
@@ -149,8 +149,6 @@ function setContent() {
     };
 
 
-    ///////////////////////
-
     //makes a div to hold each message frim the array/form input
     let messageDiv = document.createElement("div");
     messageDiv.classList.add("display-container", "show");
@@ -175,7 +173,7 @@ function setContent() {
 }
 
 
-
+//calls findClickLocation when user clicks in clickable-area container
 document.getElementById("clickable-area").addEventListener("click", findClickLocation);
 
 //calls showForm function when user clicks in clickable-area container

@@ -1,4 +1,3 @@
-# Talponia Chat
 This is a chatroom for pawpaw peduncle borers _(Talponia plummeriana)_, a moth species that feeds and lives on pawpaw trees. Pawpaws are the largest fruit native to North America. Peduncle Borers enter their name, date the egg they hatched from was laid, and their message which is displayed at the location of their click on the page. 
 
 ## How to run Locally
@@ -18,7 +17,7 @@ __Two pages/routes in the Project__
 I have the main page (index.html) and the about page (about.html)
 
 __Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app__  
-I store each set of input from each form submission in formObj and all the objects from each form submission are saved in formArray. I use the click location to determine where the message will be displayed and then use the dob to determine what image is displyed to represent the peduncle borer's current life cycle stage. 
+I store each set of input from each form submission in formObj and all the objects from each form submission are saved in formArray. I use the click location to determine where the message will be displayed and then use the dob to determine what image is displayed to represent the peduncle borer's current life cycle stage. 
 
 __Validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved)__  
 I use the functions validateName, validateDOB, and validateMessage to ensure the peduncle borers don't submit only spaces or a blank for the names and message inputs and that they do elect a date for the dob input.

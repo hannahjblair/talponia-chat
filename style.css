@@ -12,9 +12,9 @@ body {
     min-height: 100vh;
     min-height: 100svh; 
     width: 100%;
-    /* overscroll-behavior: none;  */
+    overscroll-behavior: none; 
     align-items: center;
-    /* overflow: hidden; */
+    overflow: hidden;
     margin: 0;
     background: linear-gradient(90deg,rgba(255, 160, 28, 1) 0%, rgba(242, 253, 29, 1) 50%, rgba(12, 235, 247, 1) 100%);
     /* https://cssgradient.io/ */
@@ -185,6 +185,10 @@ footer {
 h1 a {
     color: black;
     text-decoration: none;
+}
+
+#keyboard-container {
+    display: none;
 }
 
 @media (min-width: 1200px) {

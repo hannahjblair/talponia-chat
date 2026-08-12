@@ -1,7 +1,7 @@
 This is a chatroom for pawpaw peduncle borers _(Talponia plummeriana)_, a moth species that feeds and lives on pawpaw trees. Pawpaws are the largest fruit native to North America. Peduncle Borers enter their name, date the egg they hatched from was laid, and their message which is displayed at the location of their click on the page. 
 
-## How to run Locally
-1. Clone the talponia-chat repository to your local envir0nment
+## How to run locally
+1. Clone the talponia-chat repository to your local environment
 2. Open the repo in VScode
 3. Open index.html and use the Go Live feature in VScode to view the project
 
@@ -23,4 +23,4 @@ __Validate user input and either prevent the invalid input or inform the user ab
 I use the functions validateName, validateDOB, and validateMessage to ensure the peduncle borers don't submit only spaces or a blank for the names and message inputs and that they do elect a date for the dob input.
 
 __Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)__  
-I use the peduncle borer's dob and the current date to determine how many days old the peduncle borer is, which is used to detrmine what life cycle stage they are in, which determines which image is displayed next to their name. 
+I use the peduncle borer's dob and the current date to determine how many days old the peduncle borer is, which is used to determine what life cycle stage they are in, which determines which image is displayed next to their name. 

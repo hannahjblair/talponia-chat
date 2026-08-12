@@ -15,7 +15,9 @@ async function displayReadMe() {
         //https://base64.guru/learn/what-is-base64#:~:text=Base64%20is%20most%20commonly%20used,transfer%2C%20storage%2C%20or%20output.
         const readMeContent = atob(data.content);
 
-        targetContainer.innerHTML = readMeContent;
+       const readMeMarkdown = marked.parse(readMeContent);
+
+        targetContainer.innerHTML = readMeMarkdown;
 
     } catch (error) {
         targetContainer.innerHTML = `Error: ${error.message}`;

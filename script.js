@@ -12,7 +12,8 @@ function showForm() {
 }
 
 //changes the display of the form element to none and stops event propogation
-function hideForm(event) {
+function hideForm(event)
+ {
     event.stopPropagation();
     document.getElementById("form").style.display = "none";
     document.getElementById("form").reset();
@@ -34,7 +35,17 @@ document.getElementById("form").addEventListener("click", function(event) {
     event.stopPropagation();
 });
 
+//show the keyboard
+function ShowKeyboard() {
+    document.getElementById("keyboard-container").style.display = "flex";
+}
 
+//hide the keyboard
+function hideKeyboard() {
+    document.getElementById("keyboard-container").style.display = "none";
+}
+
+//need to
 
 //Form validation, check if the input is left blank and if so sets the alert message
 //to show using css
@@ -77,9 +88,8 @@ function validateMessage() {
 let clickLocation = {x: 0, y: 0};
 
 function findClickLocation(event) {
-    clickLocation.x = event.pageX;
-    clickLocation.y = event.pageY;
-    // console.log(clickLocation);
+    clickLocation.x = (event.pageX / window.innerWidth) * 100;
+    clickLocation.y = (event.pageY / window.innerHeight) * 100;
 }
 
 // function that adds the user input from the form to an object then pushes 
@@ -164,8 +174,8 @@ function setContent() {
 
     //displays the message at the location the user clicked
     messageDiv.style.position = "absolute";
-    messageDiv.style.left = formObj.location.x + "px";
-    messageDiv.style.top = formObj.location.y + "px";
+    messageDiv.style.left = formObj.location.x + "%";
+    messageDiv.style.top = formObj.location.y + "%";
     document.body.appendChild(messageDiv);
 
 
@@ -195,9 +205,6 @@ document.getElementById("btn").addEventListener("click", function(event) {
         hideForm(event);
     }
 });
-
-
-
 
 
 

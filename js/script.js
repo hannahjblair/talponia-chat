@@ -36,14 +36,14 @@ document.getElementById("form").addEventListener("click", function(event) {
 });
 
 //show the keyboard
-function ShowKeyboard() {
-    document.getElementById("keyboard-container").style.display = "flex";
-}
+// function ShowKeyboard() {
+//     document.getElementById("keyboard-container").style.display = "flex";
+// }
 
 //hide the keyboard
-function hideKeyboard() {
-    document.getElementById("keyboard-container").style.display = "none";
-}
+// function hideKeyboard() {
+//     document.getElementById("keyboard-container").style.display = "none";
+// }
 
 //need to
 
@@ -139,10 +139,10 @@ function setContent() {
     let altDescription = "";
 
     if (age < 0) {
-        stage = "particles.png";
+        stage = "particle.png";
         altDescription = "the user is currently spec of dust that has not yet become a pawpawpeduncle borer";
     } else if (age >= 0 && age <= 14) {
-        stage = "eggs.png";
+        stage = "egg.png";
         altDescription = "the user is an egg";
     } else if (age >= 15 && age <= 90) {
         stage = "larva.png";
@@ -177,8 +177,6 @@ function setContent() {
     messageDiv.style.left = formObj.location.x + "%";
     messageDiv.style.top = formObj.location.y + "%";
     document.body.appendChild(messageDiv);
-
-
 
 }
 

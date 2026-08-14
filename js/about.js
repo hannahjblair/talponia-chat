@@ -6,7 +6,7 @@ async function displayReadMe() {
         const response = await fetch(apiEndpoint);
         
         if (!response.ok) {
-            throw new Error("Could not load ReadMe'");
+            throw new Error("Could not load ReadMe");
         }
 
         const data = await response.json();

@@ -35,8 +35,7 @@ form {
     border-radius: 5px;
     margin-left: .5em;
     margin-right: .5em;
-    /* max-height: 45vh; doesn't work to get the form to be able to submit while preventing scrolling for the rest of the page*/
-    max-height: 85vh;
+    max-height: 75vh;
     overflow-y:auto;
 }
 

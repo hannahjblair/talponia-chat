@@ -25,6 +25,9 @@ body {
     width: 100%;
     align-items: center;
     flex-grow: 1;
+    /* margin-bottom: 200px;  */
+    /* need this to keep the messages from covering up 
+    the link to the about page in the footer */
 }
 
 form {
@@ -155,6 +158,14 @@ input[type="text"], input[type="date"] {
 }
 
 
+.user-message {
+    max-height: 150px;
+    overflow-y: auto;
+    word-break: break-word;
+    /* keeps the message from getting to long, adds scroll, breaks up long words */
+}
+
+
 img {
     height: 2em;
     margin-left: .25em;
@@ -164,19 +175,19 @@ img {
     display: block;
 }
 
-footer a {
-    font-size: 1.5em;
+a {
     color: black;
     text-decoration: none;
-}
+} 
 
-footer {
-    margin: 1em;
-}
 
 h1 {
-    padding-top: 1em;
+    margin-top: 1em;
     padding-bottom: .5em;
+}
+
+h2 {
+    margin-bottom: .5em;
 }
 
 #keyboard-container {

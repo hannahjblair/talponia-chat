@@ -128,7 +128,7 @@ function setContent() {
     // console.log(age);
 
     //gunna determine what life cycle stage the user is in according to their age/dob
-    //if age is negative - spec of dust
+    //if age is negative - particle
     //if 0-14 days egg
     //if 15-90 days larva
     //if 91-331 days pupa
@@ -139,22 +139,22 @@ function setContent() {
     let altDescription = "";
 
     if (age < 0) {
-        stage = "particle.png";
-        altDescription = "the user is currently spec of dust that has not yet become a pawpawpeduncle borer";
+        stage = "img/particle.png";
+        altDescription = "the user is currently a particle that has not yet become a pawpawpeduncle borer";
     } else if (age >= 0 && age <= 14) {
-        stage = "egg.png";
+        stage = "img/egg.png";
         altDescription = "the user is an egg";
     } else if (age >= 15 && age <= 90) {
-        stage = "larva.png";
+        stage = "img/larva.png";
         altDescription = "the user is a larva";
     } else if (age >= 91 && age <= 331) {
-        stage = "pupa.png";
+        stage = "img/pupa.png";
         altDescription = "the user is a pupa";
     } else if (age >= 332 && age <= 362) {
-        stage = "moth.png";
+        stage = "img/moth.png";
         altDescription = "the user is a moth";
     } else if (age >= 363) {
-        stage = "decomposed.png";
+        stage = "img/decomposed.png";
         altDescription = "the user is decomposed";
     };
 

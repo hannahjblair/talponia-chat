@@ -35,18 +35,6 @@ document.getElementById("form").addEventListener("click", function(event) {
     event.stopPropagation();
 });
 
-//show the keyboard
-// function ShowKeyboard() {
-//     document.getElementById("keyboard-container").style.display = "flex";
-// }
-
-//hide the keyboard
-// function hideKeyboard() {
-//     document.getElementById("keyboard-container").style.display = "none";
-// }
-
-//need to
-
 //Form validation, check if the input is left blank and if so sets the alert message
 //to show using css
 
@@ -87,6 +75,7 @@ function validateMessage() {
 //puts the click location of the click in the clickable-area in an object
 let clickLocation = {x: 0, y: 0};
 
+//will be using this as a percentage in lines 178 and 179
 function findClickLocation(event) {
     clickLocation.x = (event.pageX / window.innerWidth) * 100;
     clickLocation.y = (event.pageY / window.innerHeight) * 100;
@@ -172,12 +161,11 @@ function setContent() {
                                 <p>${formObj.message}</p>
                             </div>`
 
-    //displays the message at the location the user clicked
+    //displays the message at the location the user clicked, using percentages instead of pixels so the display is more dynamic
     messageDiv.style.position = "absolute";
     messageDiv.style.left = formObj.location.x + "%";
     messageDiv.style.top = formObj.location.y + "%";
     document.body.appendChild(messageDiv);
-
 }
 
 

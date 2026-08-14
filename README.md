@@ -11,7 +11,7 @@ __API__
 I utilized the github API to display the README from my project's repository on the about page.
 
 __Media Query__  
-I used a media query to have the messages only take up 15% of the screen for screens 1200 px and wider, instead of the default width of 25% so the messages don't look stretched.
+I used a media query to have the messages only take up 15% of the screen for screens 992px and wider, instead of the default width of 25% so the messages don't look stretched.
 
 __Two pages/routes in the Project__  
 I have the main page (index.html) and the about page (about.html)

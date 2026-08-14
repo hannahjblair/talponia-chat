@@ -110,7 +110,6 @@ input[type="text"], input[type="date"] {
     min-width: 250px;
     border: 2px solid transparent; /* slightly glowy border */    
     box-shadow: 0 0 5px #ffccff; /* slightly glowy border*/ 
-    transform: translate(-50%, -50%);
 }
 
 /* triangle that makes the container look like a message bubble */
@@ -144,6 +143,7 @@ input[type="text"], input[type="date"] {
 .display-container p {
     margin: 0;
     padding: 0;
+    font-size: 1em;
 }
 
 .name-container p {
@@ -154,8 +154,9 @@ input[type="text"], input[type="date"] {
     text-overflow: ellipsis;
 }
 
+
 img {
-    height: 30px;
+    height: 2em;
     margin-left: .25em;
     width: auto;
     max-width: 100%;
@@ -185,4 +186,17 @@ h1 {
     .display-container {
     width: 15%;
 }
+
+    .name-container p, 
+.display-container p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
 }
+
+    img {
+    height: 2.5em;
+}
+    
+}
+

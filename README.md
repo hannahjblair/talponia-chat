@@ -3,7 +3,7 @@ This is a chatroom for pawpaw peduncle borers _(Talponia plummeriana)_, a moth s
 ## How to run locally
 1. Clone the talponia-chat repository to your local environment
 2. Open the repo in VScode
-3. Open index.html and use the Go Live feature in VScode to view the project
+3. Open index.html and use the Go Live extension in VScode to view the project
 
 ## Features  
 
@@ -20,7 +20,7 @@ __Analyze data that is stored in arrays, objects, sets or maps and display infor
 I store each set of input from each form submission in formObj and all the objects from each form submission are saved in formArray. I use the click location to determine where the message will be displayed and then use the dob to determine what image is displayed to represent the peduncle borer's current life cycle stage. 
 
 __Validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved)__  
-I use the functions validateName, validateDOB, and validateMessage to ensure the peduncle borers don't submit only spaces or a blank for the names and message inputs and that they do elect a date for the dob input.
+I use the functions validateName, validateDOB, and validateMessage to ensure the peduncle borers don't submit only spaces or a blank for the names and message inputs and that they do select a date for the dob input.
 
 __Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)__  
 I use the peduncle borer's dob and the current date to determine how many days old the peduncle borer is, which is used to determine what life cycle stage they are in, which determines which image is displayed next to their name. 
